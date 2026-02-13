@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Rama 💋 My California Dream</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #ff4e88, #111);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Floating Hearts */
+.heart {
+  position: fixed;
+  color: #ffb6c1;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh); opacity:1;}
+  100% {transform: translateY(-10vh); opacity:0;}
+}
+
+h1 {
+  font-size: 55px;
+  margin-top: 60px;
+  text-shadow: 3px 3px black;
+}
+
+.section {
+  padding: 50px 20px;
+}
+
+button {
+  background: black;
+  color: #ff4e88;
+  border: 2px solid #ff4e88;
+  padding: 15px 35px;
+  font-size: 18px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background: #ff4e88;
+  color: black;
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-size: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.countdown {
+  font-size: 30px;
+  color: #ffb6c1;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Rama 💋</h1>
+<p>My California dream. My beautiful bad girl. My forever.</p>
+
+<div class="section">
+<button onclick="showCute()">Cute Love 💕</button>
+<div id="cute" class="hidden">
+You smile and the world becomes softer.  
+You laugh and I forget every problem.  
+You are my peace.
+</div>
+</div>
+
+<div class="section">
+<button onclick="showSexy()">Bad Girl Energy 🔥</button>
+<div id="sexy" class="hidden">
+You walk like you own California.  
+Confident. Dangerous. Perfect.  
+But at the end of the day… you're mine.
+</div>
+</div>
+
+<div class="section">
+<button onclick="showEmotional()">Emotional Confession 🎭</button>
+<div id="emotional" class="hidden">
+Rama…  
+On 18.09.2025, I don't just marry you.  
+I choose you. Every day. For the rest of my life.  
+Saranghae. Always.
+</div>
+</div>
+
+<div class="section">
+<div class="countdown" id="countdown"></div>
+</div>
+
+<script>
+function showCute(){ document.getElementById("cute").style.display="block"; }
+function showSexy(){ document.getElementById("sexy").style.display="block"; }
+function showEmotional(){ document.getElementById("emotional").style.display="block"; }
+
+// Countdown
+var weddingDate = new Date("Sep 18, 2025 00:00:00").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = weddingDate - now;
+  var days = Math.floor(distance / (1000*60*60*24));
+  document.getElementById("countdown").innerHTML =
+  "Counting down to 18.09.2025 💍 " + days + " days left";
+}, 1000);
+
+// Floating hearts generator
+setInterval(function(){
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  document.body.appendChild(heart);
+  setTimeout(function(){ heart.remove(); }, 5000);
+}, 500);
+</script>
+
+</body>
+</html>
