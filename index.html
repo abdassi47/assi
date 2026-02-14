@@ -126,7 +126,35 @@ setInterval(function() {
 }, 1000);
 
 function loveMessage() {
-  alert("Rama… you're my only California dream. Forever and always ❤️🔥"كنت حابب ضيف جملة للتنمر بس عديناها ع التصميم الجاي );
+  alert("Rama… you're my only California dream. Forever and always ❤️🔥" );
+}
+</script>
+  <div class="section">
+<h2>Forever Starts In:</h2>
+<div class="countdown" id="countdown"></div>
+</div>
+
+<div class="section">
+<button onclick="loveMessage()">Click here agai 😈</button>
+</div>
+
+<script>
+// Countdown
+var weddingDate = new Date("Sep 18, 2025 00:00:00").getTime();
+setInterval(function() {
+  var now = new Date().getTime();
+  var distance = weddingDate - now;
+
+  var days = Math.floor(distance / (1000*60*60*24));
+  var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+  document.getElementById("countdown").innerHTML =
+  days + " days " + hours + " hours " + minutes + " minutes 💍";
+}, 1000);
+
+function loveMessage() {
+  alert("بدي انكش راس بس لغير مرة 😂😂😂😂");
 }
 </script>
   
